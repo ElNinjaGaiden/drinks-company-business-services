@@ -1,0 +1,25 @@
+{
+  "name": "drinks-company-business-services",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rm -rf ./dist && tsc"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^14.0.14",
+    "@typescript-eslint/eslint-plugin": "^3.5.0",
+    "@typescript-eslint/parser": "^3.5.0",
+    "eslint": "^7.4.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "typescript": "^3.9.6"
+  },
+  "dependencies": {
+    "drinks-company-business-services-contracts": "git+https://github.com/ElNinjaGaiden/drinks-company-business-services-contracts.git",
+    "drinks-company-data-repositories-contracts": "git+https://github.com/ElNinjaGaiden/drinks-company-data-repositories-contracts.git"
+  }
+}
