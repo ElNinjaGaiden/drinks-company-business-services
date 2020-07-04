@@ -3,6 +3,8 @@ import { IDrinksDataRepository } from 'drinks-company-data-repositories-contract
 import { Drink } from 'drinks-company-models-contracts';
 export default class DrinksBusinessService implements IDrinksBusinessService {
     drinksDataRepository: IDrinksDataRepository;
-    constructor(drinksDataRepository: IDrinksDataRepository);
+    constructor({ drinksDataRepository }: {
+        drinksDataRepository: IDrinksDataRepository;
+    });
     crazyFunction(): Promise<Drink[]>;
 }

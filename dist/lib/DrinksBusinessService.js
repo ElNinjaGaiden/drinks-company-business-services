@@ -37,7 +37,8 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var DrinksBusinessService = /** @class */ (function () {
-    function DrinksBusinessService(drinksDataRepository) {
+    function DrinksBusinessService(_a) {
+        var drinksDataRepository = _a.drinksDataRepository;
         this.drinksDataRepository = drinksDataRepository;
     }
     DrinksBusinessService.prototype.crazyFunction = function () {
