@@ -38,22 +38,24 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var DrinksBusinessService = /** @class */ (function () {
     function DrinksBusinessService(_a) {
-        var drinksDataRepository = _a.drinksDataRepository;
+        var drinksDataRepository = _a.drinksDataRepository, clientName = _a.clientName;
         this.drinksDataRepository = drinksDataRepository;
+        this.clientName = clientName;
     }
     DrinksBusinessService.prototype.crazyFunction = function () {
         var _this = this;
         return new Promise(function (resolve) { return __awaiter(_this, void 0, void 0, function () {
-            var drinks;
+            var drinks, result;
+            var _this = this;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.drinksDataRepository.getDrinks()];
                     case 1:
                         drinks = _a.sent();
-                        drinks.forEach(function (drink) {
-                            console.log("Doing crazy stuff with " + drink.name);
-                        });
-                        resolve(drinks);
+                        result = drinks.map(function (drink) { return ({
+                            name: "Running some crazy business process for client " + _this.clientName + " over drink " + drink.name
+                        }); });
+                        resolve(result);
                         return [2 /*return*/];
                 }
             });
