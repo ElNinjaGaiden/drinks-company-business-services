@@ -4,18 +4,22 @@ import { Drink } from 'drinks-company-models-contracts';
 
 export default class DrinksBusinessService implements IDrinksBusinessService {
 	drinksDataRepository: IDrinksDataRepository;
+	clientName: String;
 
-	constructor({ drinksDataRepository } : { drinksDataRepository: IDrinksDataRepository }) {
+	constructor({ drinksDataRepository, clientName } : {
+		drinksDataRepository: IDrinksDataRepository,
+		clientName: String }) {
 		this.drinksDataRepository = drinksDataRepository;
+		this.clientName = clientName;
 	}
 
 	crazyFunction() : Promise<Drink[]> {
 		return new Promise(async (resolve: Function) => {
 			const drinks = await this.drinksDataRepository.getDrinks();
-			drinks.forEach((drink: Drink) => {
-				console.log(`Doing crazy stuff with ${drink.name}`);
-			});
-			resolve(drinks);
+			const result = drinks.map((drink: Drink) => ({
+				name: `Running some crazy business process for client ${this.clientName} over drink ${drink.name}`
+			}));
+			resolve(result);
 		});
 	}
 }

@@ -19,6 +19,7 @@
         "no-tabs": "off",
         "no-console": "off",
         "class-methods-use-this": "off",
-        "no-async-promise-executor": "off"
+        "no-async-promise-executor": "off",
+        "lines-between-class-members": "off"
     }
 }
